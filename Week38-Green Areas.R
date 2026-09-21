@@ -159,3 +159,21 @@ Gain_table <- Gain_Green_Area_Cities %>%
   gt_highlight_rows(rows = 1)
 
 gtsave(Lost_table,"week38_PercentGreenSpaceGained.png",path = "plots/")
+
+
+
+# Other
+
+med_pct <-urban %>% 
+  group_by(year) %>% 
+  summarise(med_value = median(averageShareOfGreenAreaInCityUrbanAreaPct,na.rm = TRUE))
+
+urban %>% 
+  filter(cityName == "Stoke-on-Trent (The Potteries)") %>% 
+  filter(!is.na(averageShareOfGreenAreaInCityUrbanAreaPct)) %>% 
+  ggplot(.,aes(x=factor(year),y=averageShareOfGreenAreaInCityUrbanAreaPct))+
+  geom_col()+
+  geom_point(data = med_pct, aes(x=factor(year),y=med_value,fill="Medain Value"))+
+  labs(fill = " ")
+
+
