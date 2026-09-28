@@ -177,3 +177,13 @@ urban %>%
   labs(fill = " ")
 
 
+library(gganimate)
+urban %>% 
+  filter(cityName %in% c("Stoke-on-Trent (The Potteries)","Zenica","Winston-Salem","León","Bayamo")) %>% 
+  ggplot(.,aes(x=cityName,y=averageShareOfGreenAreaInCityUrbanAreaPct,fill=cityName))+
+    geom_bar(stat = 'identity')+
+    theme_bw()+
+    transition_states(year,transition_length = 2, state_length = 1)+
+    ease_aes('linear')
+
+

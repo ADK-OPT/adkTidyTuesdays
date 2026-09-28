@@ -16,3 +16,11 @@ dead_sea_scrolls  %>%
 # Were deuterocanonical books (Tobit, Sirach, Letter of Jeremiah) treated differently from 
 # protocanonical books in terms of storage location, writing material, or scribal period?
 
+
+
+
+
+# What does the distribution of manuscripts across 
+# caves tell us about the library's organization?
+
+
